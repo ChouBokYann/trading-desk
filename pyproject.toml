@@ -1,0 +1,13 @@
+[project]
+name = "trading-desk"
+version = "0.1.0"
+description = "Interactive trading desk companion — Claude Code skills with 13 named agent personas"
+requires-python = ">=3.11"
+dependencies = [
+    "yfinance>=0.2.36",
+    "pandas>=2.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"

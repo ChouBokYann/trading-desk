@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/*)",
+      "Bash(uv run *)",
+      "mcp__yahoo_finance__*",
+      "mcp__reddit__*",
+      "mcp__financekit__*",
+      "mcp__edgartools__*",
+      "mcp__omnisearch__*",
+      "mcp__opennews__*",
+      "mcp__alpaca__*",
+      "mcp__maverick_mcp__*",
+      "mcp__fred__*",
+      "mcp__obsidian__*"
+    ]
+  },
+  "env": {
+    "FMP_API_KEY": "wRBsBebygrSIsmzbUMjSBep0136iEkVG",
+    "FRED_API_KEY": "ff1344f647a73fd26064b8e60514c51c",
+    "TIINGO_API_KEY": "daf21fe3b1bc1c8a879f2843ef9d63cf0a91aad9"
+  }
+}

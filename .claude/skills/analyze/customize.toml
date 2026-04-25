@@ -1,0 +1,31 @@
+[workflow]
+name = "analyze"
+display_name = "Trading Desk Analysis"
+description = "Full 13-agent trading desk analysis pipeline"
+
+[config]
+# Model for parallel analysts (Stage 2) — cost optimization
+analyst_model = "haiku"
+
+# Model for debate, trade, and risk stages — higher reasoning
+debate_model = ""  # empty = default model
+
+# Prefetch command for market data
+prefetch_command = "python scripts/fetch_data.py"
+
+# Market data cache location
+cache_path = "{project-root}/.cache"
+
+# Obsidian trade journal output
+journal_output_path = "C:\\Users\\maker\\Documents\\Obsidian Vault\\Trade Journal"
+
+# Word limits per agent response
+analyst_word_limit = 300
+debate_word_limit = 400
+verdict_word_limit = 250
+trade_word_limit = 0  # no limit (structured output)
+risk_review_word_limit = 200
+final_gate_word_limit = 350
+
+# Persistent facts loaded into all agent prompts (portfolio constraints, risk preferences)
+persistent_facts = ["file:{project-root}/**/project-context.md"]

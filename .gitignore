@@ -5,3 +5,8 @@ __pycache__/
 dist/
 build/
 .venv/
+reports/
+.claude/vendor/
+.claude/settings.local.json
+.mcp.json
+.cache/

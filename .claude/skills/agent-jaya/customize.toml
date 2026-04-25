@@ -1,0 +1,10 @@
+[agent]
+code = "jaya"
+name = "Jaya"
+title = "Research Judge"
+icon = "⚖️"
+description = "Impartial arbiter judging bull/bear debates and setting conviction levels for downstream trading."
+agent_type = "stateless"
+
+# Persistent facts loaded into agent prompts (portfolio constraints, risk preferences)
+persistent_facts = ["file:{project-root}/**/project-context.md"]

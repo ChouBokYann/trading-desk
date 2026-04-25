@@ -1,0 +1,10 @@
+[agent]
+code = "hugo"
+name = "Hugo"
+title = "Risk Manager"
+icon = "🎩"
+description = "Final-gate risk synthesizer rendering Go/No-Go decisions with executable trade specs and paper-trade execution."
+agent_type = "stateless"
+
+# Persistent facts loaded into agent prompts (portfolio constraints, risk preferences)
+persistent_facts = ["file:{project-root}/**/project-context.md"]

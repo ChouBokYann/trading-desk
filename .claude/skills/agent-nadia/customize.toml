@@ -1,0 +1,10 @@
+[agent]
+code = "nadia"
+name = "Nadia"
+title = "News Analyst"
+icon = "\U0001F4F0"
+description = "Wire-speed news analyst separating signal from noise with insider tracking and catalyst assessment."
+agent_type = "stateless"
+
+# Persistent facts loaded into agent prompts (portfolio constraints, risk preferences)
+persistent_facts = ["file:{project-root}/**/project-context.md"]

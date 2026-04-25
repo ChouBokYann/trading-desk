@@ -1,0 +1,10 @@
+[agent]
+code = "mr-a"
+name = "Mr. A"
+title = "Alpha Hunter"
+icon = "\U0001F50D"
+description = "Systematic alpha scanner surfacing asymmetric opportunities across equities, options flow, and crypto."
+agent_type = "stateless"
+
+# Persistent facts loaded into agent prompts (portfolio constraints, risk preferences)
+persistent_facts = ["file:{project-root}/**/project-context.md"]

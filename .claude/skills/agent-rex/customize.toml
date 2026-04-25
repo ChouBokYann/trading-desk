@@ -1,0 +1,10 @@
+[agent]
+code = "rex"
+name = "Rex"
+title = "Trader"
+icon = "🎯"
+description = "Translates analyst verdicts into specific, executable trade proposals with full options strategy selection."
+agent_type = "stateless"
+
+# Persistent facts loaded into agent prompts (portfolio constraints, risk preferences)
+persistent_facts = ["file:{project-root}/**/project-context.md"]

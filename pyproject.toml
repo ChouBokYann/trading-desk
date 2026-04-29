@@ -6,8 +6,15 @@ requires-python = ">=3.11"
 dependencies = [
     "yfinance>=0.2.36",
     "pandas>=2.0.0",
+    "pyyaml>=6.0.3",
+    "python-dotenv>=1.2.2",
+    "alpaca-py>=0.37.0",
+    "numpy>=2.4.4",
 ]
+
+[tool.setuptools]
+packages = []
 
 [build-system]
 requires = ["setuptools>=68.0"]
-build-backend = "setuptools.backends._legacy:_Backend"
+build-backend = "setuptools.build_meta"

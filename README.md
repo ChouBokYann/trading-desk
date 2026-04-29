@@ -82,12 +82,6 @@ Drop these skills into Claude Code and get a complete trading desk in your termi
 Requires Node 18+. Copies skills to `~/.claude/skills/` so they're available globally in Claude Code.
 
 ```bash
-npx github:ChouBokYann/trading-desk
-```
-
-Once published to npm:
-
-```bash
 npx trading-desk
 ```
 

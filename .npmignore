@@ -1,0 +1,39 @@
+# Only ship the skills and installer — exclude everything else
+
+# Dev/build artifacts
+node_modules/
+.venv/
+.pytest_cache/
+*.pyc
+__pycache__/
+dist/
+build/
+uv.lock
+pyproject.toml
+
+# Personal/local files
+.env
+.mcp.json
+.claude/settings.json
+.claude/settings.local.json
+project-context.md
+CLAUDE.md
+fred-data/
+
+# BMad framework skills (not part of the trading desk)
+.claude/skills/bmad-*/
+.claude/vendor/
+
+# BMad build/config/output (not needed at runtime)
+_bmad/
+_bmad-output/
+
+# In-progress skills/ shadow copies (canonical is .claude/skills/)
+skills/
+
+# Daemon (not part of npx install)
+daemon/
+
+# Git
+.git/
+.gitignore

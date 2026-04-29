@@ -1,0 +1,28 @@
+document_output_language: English
+output_folder: '{project-root}/_bmad-output'
+tm:
+  name: The Money
+  description: Quant execution engine — regime assessment, signal evaluation, trade
+    deployment, causal review, and performance synthesis
+  version: 1.0.0
+  default_selected: false
+  tm_wiki_folder: '{project-root}/_bmad/memory/tm'
+  tm_obsidian_vault: C:\Users\maker\Documents\Obsidian Vault\Trade Journal\
+  tm_max_risk_pct: '2.0'
+  tm_max_portfolio_risk: '8.0'
+  tm_paper_trading: true
+  risk_per_trade: 2%
+  max_portfolio_heat: 8%
+  min_cash_reserve: 30%
+  default_autonomy: A
+  alpaca_mode: paper
+  digest_day: Sunday
+  max_positions: 8
+  strategies:
+  - edvp
+  - tcep
+  - orb
+  - erp
+  - mrf
+  - smr
+  desk_installed: true

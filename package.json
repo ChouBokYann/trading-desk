@@ -1,0 +1,26 @@
+{
+  "name": "trading-desk",
+  "version": "1.0.0",
+  "description": "AI-powered trading desk for Claude Code — 14 analyst agents + automated morning workflow",
+  "bin": {
+    "trading-desk": "./bin/install.js"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "trading",
+    "stocks",
+    "options",
+    "AI",
+    "agents"
+  ],
+  "author": "ChouBokYann",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChouBokYann/trading-desk.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

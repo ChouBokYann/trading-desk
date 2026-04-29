@@ -1,0 +1,35 @@
+module,skill,display-name,menu-code,description,action,args,phase,after,before,required,output-location,outputs
+The Money,tm-setup,Setup The Money,SU,"Initialize wiki, database, daemon, and dependencies.",setup,,1-setup,,tm-regime:full,true,tm_wiki_folder,wiki/index.md
+The Money,tm-regime,Full Regime Scan,FR,Assess three-layer macro/sector/stock regime state.,full,[capability],anytime,tm-setup:setup,,false,tm_wiki_folder,raw/regime-snapshots/
+The Money,tm-regime,Distribution Days,DD,Calculate IBD-method distribution day count.,distribution-days,,anytime,tm-setup:setup,,false,,
+The Money,tm-regime,Safety Car Check,SC,"Evaluate circuit breaker status (VIX, daily moves, yield curve).",safety-car,,anytime,tm-setup:setup,,false,,
+The Money,tm-regime,Breadth Analysis,BA,"Calculate advance/decline, new highs/lows, and breadth score.",breadth,,anytime,tm-setup:setup,,false,,
+The Money,tm-regime,Momentum Propagation,R0,Calculate momentum spread velocity across sectors.,r0,,anytime,tm-setup:setup,,false,,
+The Money,tm-regime,Regime Snapshot,RS,Write current regime state to wiki for historical memory.,snapshot,,anytime,tm-regime:full,,false,tm_wiki_folder,raw/regime-snapshots/
+The Money,tm-agent-quant,Strategy Session,SS,Design or refine trading rules with quantitative justification.,strategy-session,,anytime,tm-setup:setup,,false,tm_wiki_folder,wiki/strategies/
+The Money,tm-agent-quant,Signal Evaluation,SE,"Score a trade signal against current rules, checklist, and sizing.",signal-evaluation,[ticker],anytime,tm-setup:setup,tm-deploy:deploy,false,,
+The Money,tm-agent-quant,Situation Report,SR,Generate prioritized action list for current market conditions.,situation-report,,anytime,tm-setup:setup,,false,,
+The Money,tm-agent-quant,Wiki Maintenance,WM,"Lint, update, and cross-reference the trading knowledge base.",wiki-maintenance,,anytime,tm-setup:setup,,false,tm_wiki_folder,
+The Money,tm-agent-quant,Rule Authoring,RA,Write daemon-executable YAML trading rule files.,rule-authoring,,anytime,tm-agent-quant:strategy-session,,false,tm_wiki_folder,wiki/rules/
+The Money,tm-agent-quant,Performance Review,PR,"Calculate rolling Sharpe, EV by setup type, and drawdown stats.",performance-review,,anytime,tm-deploy:deploy,,false,,
+The Money,tm-agent-quant,Conviction Calibration,CC,Update signal source weighting and conviction tier thresholds.,conviction-calibration,,anytime,tm-agent-quant:performance-review,,false,,
+The Money,tm-deploy,Deploy Signal,DS,"Execute full pre-trade pipeline: intake, checklist, size, and execute.",deploy,[ticker],anytime,"tm-setup:setup,tm-regime:full",,false,tm_wiki_folder,raw/trade-logs/
+The Money,tm-deploy,Manage Positions,MP,"Manage trailing stops, pyramid entries, and partial exits.",manage,,anytime,tm-deploy:deploy,,false,,
+The Money,tm-deploy,Decay Check,DC,Flag stale positions past freshness window for thesis revalidation.,decay-check,,anytime,tm-deploy:deploy,,false,,
+The Money,tm-deploy,Confirmation Queue,QU,View and act on pending Tier B confirmation orders.,queue,,anytime,tm-deploy:deploy,,false,,
+The Money,tm-deploy,Priority Rank,PK,"Rank multiple pending signals by edge, fit, and regime.",priority,,anytime,tm-deploy:deploy,,false,,
+The Money,tm-review,Post-Mortem,PM,Analyze causal attribution for a closed trade.,post-mortem,[ticker],anytime,tm-deploy:deploy,,false,tm_wiki_folder,raw/trade-logs/
+The Money,tm-review,Thesis Check,TC,Evaluate open positions for thesis integrity before stops are hit.,thesis-check,,anytime,tm-deploy:deploy,,false,,
+The Money,tm-review,Contact Trace,CT,Map causal contagion across open positions after a significant loss.,contact-trace,[ticker],anytime,tm-review:post-mortem,,false,,
+The Money,tm-dashboard,Dashboard,DB,Generate live portfolio telemetry dashboard with risk and opportunity.,full,[section],anytime,tm-setup:setup,,false,output_folder,dashboard.html
+The Money,tm-morning,Full Morning Pipeline,AM,"Automated morning workflow: regime → scan → evaluate → prioritize → deploy.",full,[phase],anytime,"tm-setup:setup,tm-regime:full",,false,tm_wiki_folder,"raw/watchlists/,raw/evaluations/"
+The Money,tm-morning,Scan Only,SC2,Run pre-market scanner using existing regime.,scan,,anytime,tm-regime:full,,false,tm_wiki_folder,raw/watchlists/
+The Money,tm-morning,Qualitative Screen,QS,Run desk agents (Nadia/Tara/Frank/Sage) on today's watchlist.,screen,,anytime,tm-morning:scan,,false,tm_wiki_folder,raw/qualitative/
+The Money,tm-morning,Evaluate Only,EV2,Evaluate today's existing watchlist candidates.,evaluate,,anytime,tm-morning:screen,,false,tm_wiki_folder,raw/evaluations/
+The Money,tm-morning,Deploy Only,DP,Deploy from today's existing evaluations.,deploy,,anytime,tm-morning:evaluate,,false,tm_wiki_folder,raw/trade-logs/
+The Money,tm-synthesis,Weekly Digest,WD,Summarize performance and extract cross-trade patterns.,weekly,,anytime,tm-review:post-mortem,,false,,
+The Money,tm-synthesis,Strategy EV,EV,Recalculate expected value per setup type from the quant layer.,strategy-ev,,anytime,tm-review:post-mortem,,false,,
+The Money,tm-synthesis,Regime Patterns,RP,Extract regime insights from accumulated snapshots and trade outcomes.,regime-patterns,,anytime,tm-regime:snapshot,,false,,
+The Money,tm-synthesis,Cross-Trade Causality,XC,Find macro patterns across batches of recent post-mortems.,cross-causality,,anytime,tm-review:post-mortem,,false,,
+The Money,tm-synthesis,Quarterly Review,QV,Conduct comprehensive system health and allocation review.,quarterly,,anytime,tm-synthesis:weekly,,false,,
+The Money,tm-synthesis,Wiki Lint,WL,"Check wiki health: identify contradictions, stale pages, and orphans.",lint,,anytime,tm-setup:setup,,false,,

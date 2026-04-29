@@ -1,0 +1,22 @@
+# The Money — Strategy Rules
+#
+# This file is authored by The Quant via /tm-agent-quant (rule-authoring action).
+# The daemon reads this on startup and on file-change events.
+#
+# Example rule structure (commented out until The Quant writes your first rule):
+#
+# strategies:
+#   - name: momentum-breakout
+#     enabled: false
+#     entry:
+#       condition: "price > resistance AND volume > avg_volume * 1.5"
+#       autonomy: C  # A=full-auto, B=auto+confirm, C=human-approval
+#     exit:
+#       stop_loss_pct: 7
+#       trail_stop_pct: 3
+#       max_hold_days: 20
+#     sizing:
+#       risk_per_trade_pct: 1.0
+#       max_position_pct: 5.0
+
+strategies: []

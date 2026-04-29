@@ -6,6 +6,9 @@ dist/
 build/
 .venv/
 reports/
+node_modules/
+_bmad/config.user.yaml
+_bmad/memory/
 .claude/vendor/
 .claude/settings.local.json
 .mcp.json

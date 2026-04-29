@@ -21,12 +21,20 @@ Interactive trading analysis via Claude Code skills — 14 named agent personas 
 ### Tier 3 — Full Pipeline
 - `/analyze <TICKER>` — All 14 agents: analysts → debate → trade → risk review
 
+### The Money — Automated Workflow
+- `/tm-morning` — Full morning pipeline: regime → scan → evaluate → prioritize → deploy
+- `/tm-morning scan` — Re-run from scanner using existing regime
+- `/tm-morning evaluate` — Re-run evaluations on today's watchlist
+- `/tm-morning deploy` — Deploy from today's existing evaluations
+
 ## Project Structure
 
 - `.claude/skills/agent-{name}/` — 14 BMad agent skills (canonical), each with SKILL.md, customize.toml, and references/
 - `.claude/skills/` — Orchestrator and solo skills (alpha, analyze, chart, edge-pipeline, macro, market-top, news, options-advisor, position-size, screen, social, valuation)
 - `personas/` — Legacy persona files (kept for reference, agent skills are canonical)
 - `scripts/fetch_data.py` — Market data prefetch (yfinance, outputs JSON to stdout)
+- `scripts/premarket_scanner.py` — Batch pre-market scanner (6 strategies, outputs watchlist JSON)
+- `scripts/universe.json` — Curated ~110 stock universe by sector (update weekly)
 - `.claude/vendor/` — Cloned reference repos (gitignored)
 - `.mcp.json` — MCP server configs (gitignored, contains API keys)
 

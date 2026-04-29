@@ -1,0 +1,38 @@
+code: tm
+name: "The Money"
+description: "Quant execution engine — regime assessment, signal evaluation, trade deployment, causal review, and performance synthesis"
+module_version: 1.0.0
+default_selected: false
+module_greeting: >
+  The Money is installed. Run tm-regime for your first regime scan,
+  then talk to The Quant for a strategy session.
+
+agents:
+  - code: quant
+    name: "The Quant"
+    title: "Quantitative Strategist"
+    icon: "🧠"
+    description: "The Money's brain — writes rules, manages wiki, evaluates signals, calibrates conviction"
+
+tm_wiki_folder:
+  prompt: "Where should The Money's wiki and knowledge base live?"
+  default: "_bmad/memory/tm"
+  result: "{project-root}/{value}"
+
+tm_obsidian_vault:
+  prompt: "Path to your Obsidian vault for trade journal entries (leave blank to skip)?"
+  default: ""
+  user_setting: true
+
+tm_max_risk_pct:
+  prompt: "Maximum risk per trade as % of portfolio?"
+  default: "1.0"
+
+tm_max_portfolio_risk:
+  prompt: "Maximum total portfolio risk as % of portfolio?"
+  default: "6.0"
+
+tm_paper_trading:
+  prompt: "Use paper trading?"
+  type: confirm
+  default: true
